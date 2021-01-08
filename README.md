@@ -2,8 +2,9 @@
 
 Steps to run:
 
-1. Build container: docker build --pull --rm -f "5_MyContainer\Dockerfile" -t sm_on_ubu:latest "5_MyContainer"
-2. Create snakemake project with following structure
+1. Build snakemake container: docker build --pull --rm -f "5_MyContainer\Dockerfile" -t sm_on_ubu:latest "5_MyContainer"
+2. Create snakemake workflow (preferably in a dedicated git repository) of the following structure
+"""bash
 ├── .gitignore
 ├── README.md
 ├── LICENSE.md
@@ -29,5 +30,6 @@ Steps to run:
 │   └── some-sheet.tsv
 ├── results
 └── resources
-3. Run snakemake project: docker run -it -v <path/to/snakemake/project>:/tmp/data sm_on_ubu:latest,
-    e.g. docker run -it -v /mnt/d/dockerdatavolumes/snakemake_ecoli_genome:/tmp/data sm_on_ubu:latest
+"""
+3. Run snakemake project in the container: docker run -it -v <path/to/snakemake/project>:/tmp/data sm_on_ubu:latest,\
+    e.g. docker run -it -v d:\docker_volume\snakemake_ecoli_genome_swissprot:/tmp/data sm_on_ubu:latest
