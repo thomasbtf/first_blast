@@ -7,35 +7,36 @@ RUN apt-get update && apt-get install -y \
 
 # Install Diamond 0.9.31
 RUN cd /root/ \
-    && mkdir /usr/diamond \
-    && cd /usr/diamond \
+    && mkdir /tmp/diamond \
+    && cd /tmp/diamond \
     && wget https://github.com/bbuchfink/diamond/releases/download/v0.9.31/diamond-linux64.tar.gz \
     && tar xzvf diamond-linux64.tar.gz \
-    && mv diamond /usr/bin/ \
+    && mv diamond /tmp/bin/ \
     && cd /root/ \
-    && rm -rf /usr/diamond
+    && rm -rf /tmp/diamond
 
 # Install latest Miniconda
 ENV PATH /opt/conda/bin:$PATH
 RUN cd /root/ \
-    && mkdir /usr/miniconda \
-    && cd /usr/miniconda \
+    && mkdir /tmp/miniconda \
+    && cd /tmp/miniconda \
     && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda \
     && cd /root/ \
-    && rm -rf /usr/miniconda
+    && rm -rf /tmp/miniconda
 
 # Install latest Snakemake
 RUN conda create -c conda-forge -n snakemake bioconda::snakemake bioconda::snakemake-minimal --only-dep -y \
     && conda clean --all -y
 ENV PATH /opt/conda/envs/snakemake/bin:${PATH}
 
+# install python packages
+RUN pip install --upgrade pip && pip install \
+    pandas 
+
 # Make dir for volume mount
 RUN cd /root/ \
     && mkdir /tmp/data
-
-RUN pip install --upgrade pip && pip install \
-    pandas 
 
 # Chang dir to mounted volumme and execute snakemake there
 CMD echo 'Changing to data dir' \
