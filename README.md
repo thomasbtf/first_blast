@@ -2,7 +2,7 @@
 
 Steps to run:
 
-#### Get the image
+### Get the image
 
 Build snakemake image by using dockerfile in this reposirotry: 
 > docker build --pull --rm -f "5_MyContainer\Dockerfile" -t thomasbtf/diamond_snakemake:latest "5_MyContainer"
@@ -10,7 +10,7 @@ Build snakemake image by using dockerfile in this reposirotry:
 Or download image via docker hub:
 > docker pull thomasbtf/diamond_snakemake
 
-#### Build the DIAMOND search in a Snakemake workflow
+### Build DIAMOND search in a Snakemake workflow
 
 Create Snakemake workflow (preferably in a dedicated git repository) of the following structure
 
@@ -40,7 +40,7 @@ Create Snakemake workflow (preferably in a dedicated git repository) of the foll
     ├── results
     └── resources
 
-#### Run the workflow in the container
+### Run the workflow in the container
 
 
 Run snakemake project in the container with a mounted volume:
