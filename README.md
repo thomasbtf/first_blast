@@ -4,7 +4,7 @@ Steps to run:
 
 1. Build snakemake container: docker build --pull --rm -f "5_MyContainer\Dockerfile" -t sm_on_ubu:latest "5_MyContainer"
 2. Create snakemake workflow (preferably in a dedicated git repository) of the following structure
-"""bash
+"""
 ├── .gitignore
 ├── README.md
 ├── LICENSE.md
