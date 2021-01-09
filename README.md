@@ -41,9 +41,9 @@ Create Snakemake workflow (preferably in a dedicated git repository) of the foll
     └── resources
 
 The Snakefile can include DIAMOND shell section of a rule, e.g.:
-> 'diamond makedb --in {input} -d {output}'
+> diamond makedb --in {input} -d {output}
 
-> "diamond blastx -q {input.genome} -d {input.diamond_db} -o {output} {config[sensitivity]}
+> diamond blastx -q {input.genome} -d {input.diamond_db} -o {output} {config[sensitivity]}
 
 ### Run the workflow in the container
 
