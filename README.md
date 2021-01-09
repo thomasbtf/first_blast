@@ -1,11 +1,18 @@
-# Blasting using Docker, Snakemake and Diamond
+# Blasting using DIAMOND with a Snakemake workflow in Docker
 
 Steps to run:
 
-Build snakemake container: 
-> docker build --pull --rm -f "5_MyContainer\Dockerfile" -t sm_on_ubu:latest "5_MyContainer"
+#### Get the image
 
-Create snakemake workflow (preferably in a dedicated git repository) of the following structure
+Build snakemake image by using dockerfile in this reposirotry: 
+> docker build --pull --rm -f "5_MyContainer\Dockerfile" -t thomasbtf/diamond_snakemake:latest "5_MyContainer"
+
+Or download image via docker hub:
+> docker pull thomasbtf/diamond_snakemake
+
+#### Build the DIAMOND search in a Snakemake workflow
+
+Create Snakemake workflow (preferably in a dedicated git repository) of the following structure
 
     ├── .gitignore
     ├── README.md
@@ -33,8 +40,13 @@ Create snakemake workflow (preferably in a dedicated git repository) of the foll
     ├── results
     └── resources
 
-Run snakemake project in the container:
-> docker run -it -v <path/to/snakemake/project>:/tmp/data sm_on_ubu:latest\
+#### Run the workflow in the container
+
+
+Run snakemake project in the container with a mounted volume:
+
+> docker run -it -v <path/to/snakemake/project>:/tmp/data thomasbtf/diamond_snakemake
 
 e.g.
-> docker run -it -v d:\docker_volume\snakemake_ecoli_genome_swissprot:/tmp/data sm_on_ubu:latest
+
+> docker run -it -v d:\docker_volume\snakemake_ecoli_genome_swissprot:/tmp/data thomasbtf/diamond_snakemake
