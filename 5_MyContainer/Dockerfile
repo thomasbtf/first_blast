@@ -54,7 +54,4 @@ CMD echo 'Changing to data dir' \
     && snakemake --cores all    
 
 # To Run and mounting drive
-# docker run -it -v <path/to/snakemake/project>:/tmp/repo/data <docker image>
-# e.g.
-# docker run -it -v /mnt/d/docker_volume/snakemake_ecoli_genome_swissprot:/tmp/data sm_on_ubu:latest
-# docker run -it -v d:\docker_volume\snakemake_ecoli_genome_swissprot:/tmp/data sm_on_ubu:latest
+# docker run -it -v <path/to/snakemake/project>:/tmp/repo/data thomasbtf/diamond_snakemake:latest
