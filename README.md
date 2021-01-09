@@ -12,7 +12,7 @@ Or download image via docker hub:
 
 ### Build DIAMOND search in a Snakemake workflow
 
-Create Snakemake workflow (preferably in a dedicated git repository) of the following structure
+Create Snakemake workflow (preferably in a dedicated git repository) of the following structure:
 
     ├── .gitignore
     ├── README.md
@@ -40,10 +40,14 @@ Create Snakemake workflow (preferably in a dedicated git repository) of the foll
     ├── results
     └── resources
 
+The Snakefile can include DIAMOND shell section of a rule, e.g.:
+> 'diamond makedb --in {input} -d {output}'
+
+> "diamond blastx -q {input.genome} -d {input.diamond_db} -o {output} {config[sensitivity]}
+
 ### Run the workflow in the container
 
-
-Run snakemake project in the container with a mounted volume:
+Run the snakemake project in the container via a mounted volume:
 
 > docker run -it -v <path/to/snakemake/project>:/tmp/data thomasbtf/diamond_snakemake
 
