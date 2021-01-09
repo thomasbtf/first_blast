@@ -53,5 +53,5 @@ CMD echo 'Changing to data dir' \
     && echo 'Staring Snakemake' \
     && snakemake --cores all    
 
-# To Run and mounting drive
+# To run and mounting drive
 # docker run -it -v <path/to/snakemake/project>:/tmp/repo/data thomasbtf/diamond_snakemake:latest
