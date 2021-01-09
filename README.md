@@ -4,7 +4,7 @@ Steps to run:
 
 ### Get the image
 
-Build snakemake image by using the dockerfile in this reposirotry:
+Build snakemake image by using the dockerfile in this GitHub repository:
 > docker build --pull --rm -f "5_MyContainer\Dockerfile" -t thomasbtf/diamond_snakemake:latest "5_MyContainer"
 
 Or download the image via docker hub:
