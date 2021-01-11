@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-# update ubuntu and packages
+# update ubuntu and update packages
 RUN apt-get update && apt-get install -y \
     wget \
     curl
