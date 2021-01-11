@@ -1,4 +1,4 @@
-# Blasting using DIAMOND with Snakemake in Docker
+# Using DIAMOND with Snakemake in Docker
 
 Steps to run:
 
