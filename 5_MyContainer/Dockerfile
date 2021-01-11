@@ -38,7 +38,7 @@ RUN cd /root/ \
 RUN pip install --upgrade pip && pip install \
     pandas 
 
-# Chang dir to mounted volumme and execute snakemake there
+# Change dir to mounted volumme and execute snakemake there
 CMD echo 'Changing to data dir' \
     && cd /tmp/data \
     && echo 'pwd:' $(pwd) \
