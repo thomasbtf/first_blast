@@ -6,12 +6,15 @@ RUN apt-get update && apt-get install -y \
     curl
 
 # Install Diamond 0.9.31
+# Hinweise: Install -m 755 instatt of mv
+# /root bei Singualrity nicht möcglich
+# /usr/bin/ gehört dem System
 RUN cd /root/ \
     && mkdir /usr/diamond \
     && cd /usr/diamond \
     && wget https://github.com/bbuchfink/diamond/releases/download/v0.9.31/diamond-linux64.tar.gz \
     && tar xzvf diamond-linux64.tar.gz \
-    && mv diamond /usr/bin/ \
+    && mv diamond /usr/bin/ \ 
     && cd /root/ \
     && rm -rf /usr/diamond
 
