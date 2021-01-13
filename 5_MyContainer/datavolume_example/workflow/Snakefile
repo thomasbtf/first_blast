@@ -6,7 +6,7 @@ rule done:
     input:
         'results/output.csv'
     shell:
-        'echo Pipiline complete!'
+        'echo Pipeline complete!'
 
 # transform fasta DB to diamond format
 rule transform_fastaDB_to_diamondDB:
