@@ -1,5 +1,13 @@
 # Using DIAMOND with Snakemake in Docker
 
+This repo contains an experimental implementation of [DIAMOND](https://github.com/bbuchfink/diamond) combined with [Snakemake](https://snakemake.readthedocs.io/) in a [Docker](https://www.docker.com/) container.
+
+DIAMOND is a  high-throughput program for aligning DNA reads or protein sequences against a protein reference database such as NR, at up to 20,000 times the speed of BLAST, with high sensitivity.
+
+The Snakemake workflow management system is a tool to create reproducible and scalable data analyses. Workflows are described via a human readable, Python based language. They can be seamlessly scaled to server, cluster, grid and cloud environments, without the need to modify the workflow definition.
+
+Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+
 Steps to run:
 
 ### Get the image
